@@ -28,6 +28,7 @@ module.exports = function(grunt) {
             windowsTile: true,
             coast: false,
             sharp: 0,
+            icoBackgroundColor: "white",
             tileBlackWhite: true,
             tileColor: "auto", // none, auto, #color
             firefox: false,
@@ -177,6 +178,7 @@ module.exports = function(grunt) {
                         "-alpha on",
                         "-background none",
                         options.trueColor ? "" : "-bordercolor white -border 0 -colors 64",
+                        options.icoBackgroundColor ? "-transparent " + options.icoBackgroundColor : "",
                         path.join(f.dest, 'favicon.ico')
                     ]));
                     grunt.log.ok();
